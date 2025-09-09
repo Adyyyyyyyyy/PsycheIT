@@ -1,30 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "./HomePage.css";
-
+import NavBar from "../Navbar";
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("students");
 
   return (
     <div className="homepage">
-      {/* Header Section */}
-      <header className="header">
-        <div className="container header-content">
-          <div className="logo">
-            <i className="fas fa-brain"></i>
-            PsycheIT
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#resources">Resources</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <a href="#login" className="cta-button">Student Login</a>
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Hero Section */}
       <section className="hero">
