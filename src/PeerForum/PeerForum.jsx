@@ -1,77 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PeerForum.css';
+
+// Import the JSON data
+import forumData from './data/forumData.json';
 
 const PeerForum = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [newPost, setNewPost] = useState({ title: '', content: '' });
   const [showNewPostForm, setShowNewPostForm] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Sample forum data
-  const forumPosts = [
-    {
-      id: 1,
-      title: 'Dealing with exam stress',
-      content: 'I have my finals coming up in two weeks and I\'m feeling incredibly overwhelmed. Does anyone have good strategies for managing exam anxiety?',
-      author: 'Ananya R.',
-      timestamp: '2 hours ago',
-      replies: 12,
-      likes: 8,
-      category: 'academic',
-      tags: ['stress', 'exams', 'anxiety']
-    },
-    {
-      id: 2,
-      title: 'Feeling lonely on campus',
-      content: 'I\'m a first-year student and I\'m struggling to make friends. Everyone seems to have their groups already. Any advice?',
-      author: 'Rahul M.',
-      timestamp: '5 hours ago',
-      replies: 24,
-      likes: 15,
-      category: 'social',
-      tags: ['loneliness', 'friendship', 'adjustment']
-    },
-    {
-      id: 3,
-      title: 'Sleep problems during semester',
-      content: 'I can\'t seem to get a good night\'s sleep no matter what I try. My mind keeps racing with all the things I need to do.',
-      author: 'Sneha P.',
-      timestamp: '1 day ago',
-      replies: 18,
-      likes: 11,
-      category: 'wellness',
-      tags: ['sleep', 'insomnia', 'self-care']
-    },
-    {
-      id: 4,
-      title: 'Balancing work and studies',
-      content: 'I\'m working part-time while taking a full course load and I\'m struggling to keep up with everything. Any tips for better time management?',
-      author: 'Vikram S.',
-      timestamp: '2 days ago',
-      replies: 7,
-      likes: 5,
-      category: 'academic',
-      tags: ['time-management', 'work', 'balance']
-    }
-  ];
-
-  const categories = [
-    { id: 'all', name: 'All Topics' },
-    { id: 'academic', name: 'Academic Stress' },
-    { id: 'social', name: 'Social Issues' },
-    { id: 'wellness', name: 'Wellness & Self-Care' },
-    { id: 'relationships', name: 'Relationships' }
-  ];
+  // Load data from JSON file
+  useEffect(() => {
+    setPosts(forumData.posts);
+    setCategories(forumData.categories);
+    setLoading(false);
+  }, []);
 
   const filteredPosts = activeTab === 'all' 
-    ? forumPosts 
-    : forumPosts.filter(post => post.category === activeTab);
+    ? posts 
+    : posts.filter(post => post.category === activeTab);
 
   const handlePostSubmit = (e) => {
     e.preventDefault();
-    alert(`Post submitted: ${newPost.title}`);
+    
+    // Create a new post object
+    const newPostObj = {
+      id: posts.length + 1,
+      title: newPost.title,
+      content: newPost.content,
+      author: 'You', // You might want to replace this with actual user data
+      timestamp: 'Just now',
+      replies: 0,
+      likes: 0,
+      category: 'general', // Default category, you might want to add category selection
+      tags: [] // You might want to add tag functionality
+    };
+    
+    // Add the new post to the posts array
+    setPosts([newPostObj, ...posts]);
+    
+    // Reset form
     setNewPost({ title: '', content: '' });
     setShowNewPostForm(false);
+    
+    alert('Your post has been submitted!');
   };
+
+  if (loading) {
+    return <div className="loading">Loading forum...</div>;
+  }
 
   return (
     <div className="peer-forum">
