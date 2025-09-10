@@ -1,0 +1,87 @@
+.chatbot-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+  height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  background: #e3f2fd;
+  color: #1565c0;
+  margin-right: auto;
+}
+
+.user-message {
+  background: #e8f5e8;
+  color: #2e7d32;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+}
+
+.chat-input input:focus {
+  border-color: #1976d2;
+}
+
+.chat-input button {
+  padding: 12px 20px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.chat-input button:hover {
+  background: #1565c0;
+}
+
+.tips-section {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.tips-section strong {
+  color: #333;
+}
+
+.tips-section ul {
+  margin: 5px 0 0 0;
+  padding-left: 15px;
+}

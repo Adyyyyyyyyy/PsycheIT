@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import HomePage from './homePage/homePage'
+import StudentDashboard from './pages/StudentDashboard'
+import Chatbot from './pages/chatbot'
 
 function App() {
- 
-
   return (
-    
-    <div className='App'>
-      <HomePage/>
-    </div>
-     
+    <Router>
+      <div className='App'>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/dashboard" element={<StudentDashboard />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
