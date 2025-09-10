@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import "./HomePage.css";
+import NavBar from "../Navbar";
 import { Link } from "react-router-dom";
 import "./homePage.css";
 
@@ -8,24 +10,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      {/* Header Section */}
-      <header className="header">
-        <div className="container header-content">
-          <div className="logo">
-            <i className="fas fa-brain"></i>
-            PsycheIT
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#resources">Resources</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <Link to="/dashboard" className="cta-button">Student Login</Link>
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Hero Section */}
       <section className="hero">
@@ -35,30 +20,6 @@ const HomePage = () => {
           <div className="hero-buttons">
             <Link to="/dashboard" className="cta-button">Get Started Today</Link>
             <a href="#learn-more" className="cta-button secondary">Learn More</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat">
-              <h3>5,000+</h3>
-              <p>Students Helped</p>
-            </div>
-            <div className="stat">
-              <h3>98%</h3>
-              <p>Satisfaction Rate</p>
-            </div>
-            <div className="stat">
-              <h3>24/7</h3>
-              <p>Support Available</p>
-            </div>
-            <div className="stat">
-              <h3>50+</h3>
-              <p>Campuses Served</p>
-            </div>
           </div>
         </div>
       </section>
