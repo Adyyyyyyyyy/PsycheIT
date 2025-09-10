@@ -29,7 +29,7 @@ const NavBar = () => {
             <li><a href="#features">Features</a></li>
             <li><Link to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
             <li><Link to="/forum" onClick={() => setIsMenuOpen(false)}>Forum</Link></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Counselling</Link></li>
           </ul>
         </nav>
         <a href="" className="login-button">Student Login</a>

@@ -17,7 +17,7 @@ const Resources = () => {
       <header className="resources-header">
         <div className="resources-header-content">
           <div className="resources-header-image">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/026/960/329/small_2x/mental-health-awareness-concept-with-two-hands-carrying-cute-brain-free-png.png" 
+            <img src="src\assets\resourceHero.webp" 
               alt="Mental wellness resources" 
             />
           </div>
@@ -175,7 +175,7 @@ const Resources = () => {
               <h3>Crisis Help Line</h3>
               <p>National Institute of Mental Health and Neurosciences (NIMHANS) Helpline</p>
               <a href="tel:080-46110007" className="crisis-link">
-                <i className="fas fa-comment"></i> Call 080-46110007	
+                <i className="fas fa-phone"></i> Call 080-46110007	
               </a>
             </div>
             

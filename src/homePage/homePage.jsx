@@ -24,7 +24,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="hero-image">
-            <img src="https://img.pikbest.com/origin/10/42/14/36dpIkbEsTnH8.png!sw800" alt="Students supporting each other's mental health" />
+            <img src="src\assets\heroHome.png!sw800" alt="Students supporting each other's mental health" />
           </div>
         </div>
       </section>

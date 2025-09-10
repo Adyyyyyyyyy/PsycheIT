@@ -6,7 +6,7 @@ import Chatbot from './pages/chatbot'
 import Resources from './resourceHub/Resources';
 import BlogPage from './resourceHub/AllBlogs'
 import PeerForum from './PeerForum/PeerForum';
-
+import BookingPage from './bookSession/booking'
 function App() {
   return (
     <Router>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/blogs/:id" element={<BlogPage />} />
           <Route path="/forum" element={<PeerForum />} />
+          <Route path="/book" element={<BookingPage />} />
 
         </Routes>
       </div>
