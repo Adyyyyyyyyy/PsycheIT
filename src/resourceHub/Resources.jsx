@@ -1,106 +1,13 @@
 import { useState } from 'react'
 import "./ResourcesPage.css";
 import NavBar from "../Navbar";
-
+import PHQ9Questionnaire from "./PHQ9";
+import GAD7Questionnaire from './GAD7';
+import resourcesData from "./resources.json";
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState("videos");
-  const resources = {
-    videos: [
-      {
-        id: 1,
-        title: "How To STOP Letting Social Anxiety Control You",
-        description: "Social anxiety can be overwhelming, but with the right strategies, you can take back control of your life and start feeling more confident in social situations. Some practical tips on how to cope with social anxiety, recognize its triggers, and manage anxiety problems effectively. ",
-        embedId: "wbroM1Di-bI",
-        duration: "06:24"
-      },
-      {
-        id: 2,
-        title: "10 Habits That Boost Your Emotional Well-being",
-        description: "We all have negative habits, but now it’s time to start incorporating some mentally beneficial behaviors into our routines in hopes we can develop a new habit - a good one this time. Here are a few mental health tips that boost your emotional well-being.",
-        embedId: "hXlFxceM4R8",
-        duration: "10:39"
-      },
-      {
-        id: 3,
-        title: "Exam Stress: A Serious Mental Health Concern",
-        description: "Dr Aruna Broota, Clinical Psychologist, is telling you why exam pressure and anxiety should not be taken lightly. What role can parents play in reducing stress? Why are all-nighters before exams a bad move? And tips to cope with exam jitters.",
-        embedId: "sAnRwCu8YLw",
-        duration: "11:06"
-      },
-      {
-        id: 4,
-        title: "Mental Health Wellness Tips",
-        description: "Practical ways to achieve better mental health and balance in your life, such as practicing gratitude, connecting with others, and maintaining physical health.",
-        embedId: "NQcYZplTXnQ",
-        duration: "3:37"
-      }
-      
-    ],
-    blogs: [
-      {
-        id: 1,
-        title: "10 Signs You Might Be Experiencing Burnout",
-        excerpt: "Academic burnout is more than just feeling tired. Learn to recognize the signs before it affects your health and grades...",
-        readTime: "5 min read",
-        category: "Self-Care"
-      },
-      {
-        id: 2,
-        title: "How to Support a Friend with Mental Health Challenges",
-        excerpt: "When someone you care about is struggling, it can be hard to know how to help. These evidence-based approaches can make a difference...",
-        readTime: "7 min read",
-        category: "Relationships"
-      },
-      {
-        id: 3,
-        title: "The Science Behind Meditation and Stress Reduction",
-        excerpt: "Research shows that regular meditation practice can physically change your brain. Here's what the studies reveal...",
-        readTime: "8 min read",
-        category: "Mindfulness"
-      },
-      {
-        id: 4,
-        title: "Navigating Social Anxiety in College Settings",
-        excerpt: "Parties, group projects, and presentations can trigger social anxiety. Learn practical strategies to manage these situations...",
-        readTime: "6 min read",
-        category: "Anxiety"
-      }
-    ],
-    guides: [
-      {
-        id: 1,
-        title: "Crisis Resource Handbook",
-        description: "Immediate steps and resources for mental health emergencies",
-        downloadLink: "#",
-        pages: "12",
-        format: "PDF"
-      },
-      {
-        id: 2,
-        title: "Daily Wellness Checklist",
-        description: "A printable tracker for maintaining mental wellness habits",
-        downloadLink: "#",
-        pages: "5",
-        format: "PDF"
-      },
-      {
-        id: 3,
-        title: "Campus-Specific Mental Health Resources",
-        description: "Directory of support services available at your institution",
-        downloadLink: "#",
-        pages: "8",
-        format: "PDF"
-      },
-      {
-        id: 4,
-        title: "Breathing Exercise Guide",
-        description: "Step-by-step instructions for anxiety-reducing breathing techniques",
-        downloadLink: "#",
-        pages: "6",
-        format: "PDF"
-      }
-    ]
-  };
+  const [activeQuestionnaire, setActiveQuestionnaire] = useState("phq9"); 
+  const resources = resourcesData;
 
   return (
     <div className="resources-page">
@@ -139,7 +46,7 @@ const Resources = () => {
               className={`resource-tab ${activeCategory === 'guides' ? 'active' : ''}`}
               onClick={() => setActiveCategory('guides')}
             >
-              <i className="fas fa-book"></i> Guides & Worksheets
+              <i className="fas fa-book"></i> Screening Test
             </button>
           </div>
         </div>
@@ -202,32 +109,47 @@ const Resources = () => {
           )}
 
           {/* Guides Section */}
-          {activeCategory === 'guides' && (
-            <div className="guides-grid">
-              <h2 className="resources-section-title">Guides & Worksheets</h2>
-              <p className="resources-section-subtitle">Download these practical resources to support your mental health journey</p>
-              
-              <div className="guides-container">
-                {resources.guides.map(guide => (
-                  <div key={guide.id} className="guide-card">
-                    <div className="guide-icon">
-                      <i className="fas fa-file-pdf"></i>
-                    </div>
-                    <div className="guide-info">
-                      <h3>{guide.title}</h3>
-                      <p>{guide.description}</p>
-                      <div className="guide-meta">
-                        <span>{guide.pages} pages • {guide.format}</span>
-                      </div>
-                    </div>
-                    <a href={guide.downloadLink} className="download-btn">
-                      <i className="fas fa-download"></i> Download
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+{activeCategory === 'guides' && (
+  <div className="guides-grid">
+    <h2 className="resources-section-title">Mental Health Screening</h2>
+    <p className="resources-section-subtitle">
+      Take these brief self-assessment questionnaires to better understand your mental health
+    </p>
+    
+    <div className="questionnaire-container">
+      <div className="questionnaire-intro">
+        <h3>PHQ-9 & GAD-7 Screening Tools</h3>
+        <p>
+          These are standard screening tools used by healthcare professionals. 
+          Your responses are anonymous and not stored. This is for self-assessment only.
+        </p>
+      </div>
+      
+      <div className="questionnaire-tabs">
+        <button 
+          className={`questionnaire-tab ${activeQuestionnaire === 'phq9' ? 'active' : ''}`}
+          onClick={() => setActiveQuestionnaire('phq9')}
+        >
+          PHQ-9 (Depression)
+        </button>
+        <button 
+          className={`questionnaire-tab ${activeQuestionnaire === 'gad7' ? 'active' : ''}`}
+          onClick={() => setActiveQuestionnaire('gad7')}
+        >
+          GAD-7 (Anxiety)
+        </button>
+      </div>
+      
+      {activeQuestionnaire === 'phq9' && (
+        <PHQ9Questionnaire />
+      )}
+      
+      {activeQuestionnaire === 'gad7' && (
+        <GAD7Questionnaire />
+      )}
+    </div>
+  </div>
+)}
         </div>
       </section>
 
