@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import './blogPage.css';
 import NavBar from '../Navbar';
-import blogData from '../resourceHub/resources.json';
+import blogData from './resources.json'; 
 
-const AllBlogs = () => {
+const BlogPage = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Find the blog with the matching ID
     const foundBlog = blogData.blogs.find(blog => blog.id === parseInt(id));
     setBlog(foundBlog);
     setLoading(false);
@@ -32,27 +34,6 @@ const AllBlogs = () => {
     );
   }
 
-  const renderContent = () => {
-    return blog.content.map((item, index) => {
-      switch (item.type) {
-        case 'heading':
-          return <h3 key={index} className="blog-heading">{item.text}</h3>;
-        case 'paragraph':
-          return <p key={index} className="blog-paragraph">{item.text}</p>;
-        case 'list':
-          return (
-            <ul key={index} className="blog-list">
-              {item.items.map((listItem, idx) => (
-                <li key={idx}>{listItem}</li>
-              ))}
-            </ul>
-          );
-        default:
-          return null;
-      }
-    });
-  };
-
   return (
     <div className="blog-page">
       <NavBar />
@@ -67,30 +48,13 @@ const AllBlogs = () => {
               <span className="blog-read-time">{blog.readTime}</span>
             </div>
             <h1 className="blog-title">{blog.title}</h1>
-            <div className="blog-author-date">
-              <span className="blog-author">By {blog.author}</span>
-              <span className="blog-date">
-                {new Date(blog.publishDate).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </span>
+            <div className="blog-excerpt">
+              <p>{blog.excerpt}</p>
             </div>
           </header>
 
-          {blog.image && (
-            <div className="blog-image-container">
-              <img 
-                src={blog.image} 
-                alt={blog.title} 
-                className="blog-image"
-              />
-            </div>
-          )}
-
           <div className="blog-content">
-            {renderContent()}
+            <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
 
           <footer className="blog-footer">
@@ -107,4 +71,4 @@ const AllBlogs = () => {
   );
 };
 
-export default AllBlogs;
+export default BlogPage;

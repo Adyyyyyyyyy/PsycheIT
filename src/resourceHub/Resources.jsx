@@ -102,7 +102,7 @@ const Resources = () => {
                     <p className="blog-excerpt">{blog.excerpt}</p>
                     <div className="blog-meta">
                       <span className="read-time">{blog.readTime}</span>
-                      <a className="read-more"><Link to="/blogs">Read More</Link></a>
+                      <Link to={`/blogs/${blog.id}`} className="read-more">Read More</Link>
                     </div>
                   </div>
                 ))}
@@ -163,26 +163,26 @@ const Resources = () => {
           
           <div className="crisis-resources">
             <div className="crisis-card">
-              <h3>National Crisis Hotline</h3>
-              <p>Call or text 988 anytime for free, confidential support</p>
-              <a href="tel:988" className="crisis-link">
-                <i className="fas fa-phone"></i> Call 988
+              <h3>National Tele Mental Health Hotline</h3>
+              <p>Dial the Toll-Free number below to get in touch with a Counsellor</p>
+              <a href="tel:1-8008914416" className="crisis-link">
+                <i className="fas fa-phone"></i> Call 1-800 891 4416
               </a>
             </div>
             
             <div className="crisis-card">
-              <h3>Crisis Text Line</h3>
-              <p>Text HOME to 741741 to connect with a crisis counselor</p>
-              <a href="sms:741741" className="crisis-link">
-                <i className="fas fa-comment"></i> Text 741741
+              <h3>Crisis Help Line</h3>
+              <p>National Institute of Mental Health and Neurosciences (NIMHANS) Helpline</p>
+              <a href="tel:080-46110007" className="crisis-link">
+                <i className="fas fa-comment"></i> Call 080-46110007	
               </a>
             </div>
             
             <div className="crisis-card">
               <h3>Emergency Services</h3>
-              <p>If you're in immediate danger, please call 911</p>
+              <p>If you're in immediate danger, please call 100</p>
               <a href="tel:911" className="crisis-link emergency">
-                <i className="fas fa-exclamation-triangle"></i> Call 911
+                <i className="fas fa-exclamation-triangle"></i> Call 100
               </a>
             </div>
           </div>
