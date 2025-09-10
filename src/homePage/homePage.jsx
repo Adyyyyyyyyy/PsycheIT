@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./HomePage.css";
 import NavBar from "../Navbar";
+import { Link } from "react-router-dom";
+import "./homePage.css";
+
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("students");
 
@@ -15,7 +18,7 @@ const HomePage = () => {
           <h1>Mental Wellness for Campus Life</h1>
           <p>Providing stigma-free, accessible psychological support for students through AI-guided first aid, confidential counseling, and peer support communities.</p>
           <div className="hero-buttons">
-            <a href="#get-started" className="cta-button">Get Started Today</a>
+            <Link to="/dashboard" className="cta-button">Get Started Today</Link>
             <a href="#learn-more" className="cta-button secondary">Learn More</a>
           </div>
         </div>
@@ -186,7 +189,7 @@ const HomePage = () => {
             <h2>Ready to prioritize your mental health?</h2>
             <p>Join thousands of students who have found support through our platform. Anonymous, secure, and available 24/7.</p>
             <div className="cta-buttons">
-              <a href="#signup" className="cta-button">Sign Up Now</a>
+              <Link to="/dashboard" className="cta-button">Sign Up Now</Link>
               <a href="#demo" className="cta-button secondary">Request Demo</a>
             </div>
           </div>
