@@ -5,6 +5,9 @@ import StudentDashboard from './pages/StudentDashboard'
 import Chatbot from './pages/chatbot'
 import Resources from './resourceHub/Resources';
 
+
+
+
 function App() {
   return (
     <Router>
@@ -14,6 +17,9 @@ function App() {
           <Route path='/resources' element={<Resources />} />
           <Route path="/dashboard" element={<StudentDashboard />} />
           <Route path="/chatbot" element={<Chatbot />} />
+          
+
+
         </Routes>
       </div>
     </Router>
