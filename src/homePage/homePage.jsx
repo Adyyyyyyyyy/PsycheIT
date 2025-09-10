@@ -21,30 +21,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat">
-              <h3>5,000+</h3>
-              <p>Students Helped</p>
-            </div>
-            <div className="stat">
-              <h3>98%</h3>
-              <p>Satisfaction Rate</p>
-            </div>
-            <div className="stat">
-              <h3>24/7</h3>
-              <p>Support Available</p>
-            </div>
-            <div className="stat">
-              <h3>50+</h3>
-              <p>Campuses Served</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="features" id="features">
         <div className="container">
