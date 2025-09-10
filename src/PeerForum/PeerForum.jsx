@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './PeerForum.css';
-
+import NavBar from '../Navbar';
 // Import the JSON data
-import forumData from './data/forumData.json';
+import forumData from './PeerForum.json';
 
 const PeerForum = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -54,6 +54,8 @@ const PeerForum = () => {
   }
 
   return (
+    <div className="peers">
+    <NavBar/>
     <div className="peer-forum">
       <div className="forum-header">
         <h2>Peer Support Forum</h2>
@@ -197,6 +199,7 @@ const PeerForum = () => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

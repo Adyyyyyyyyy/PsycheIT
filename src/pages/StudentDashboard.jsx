@@ -1,33 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./StudentDashboard.css";
-
+import NavBar from "../Navbar";
 const StudentDashboard = () => {
   return (
     <div className="student-dashboard">
       {/* Header Section - Same as HomePage */}
-      <header className="header">
-        <div className="container header-content">
-          <div className="logo">
-            <i className="fas fa-brain"></i>
-            PsycheIT
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#resources">Resources</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <div className="profile-section">
-            <div className="profile-icon">
-              <i className="fas fa-user-circle"></i>
-              <span>User 1</span>
-            </div>
-          </div>
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Main Content */}
       <div className="main-content">
