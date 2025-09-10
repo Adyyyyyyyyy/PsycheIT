@@ -16,15 +16,16 @@ const Resources = () => {
       <NavBar/>
       <header className="resources-header">
         <div className="resources-header-content">
+          <div className="resources-header-image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/026/960/329/small_2x/mental-health-awareness-concept-with-two-hands-carrying-cute-brain-free-png.png" 
+              alt="Mental wellness resources" 
+            />
+          </div>
           <div className="resources-header-text">
             <h1>Mental Health Resources</h1>
             <p>Access videos, articles, and guides to support your mental wellness journey. All resources are carefully curated by mental health professionals.</p>
           </div>
-          <div className="resources-header-image">
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/mental-health-illustration-svg-png-download-3016778.png" 
-              alt="Mental wellness resources" 
-            />
-          </div>
+          
         </div>
       </header>
 
