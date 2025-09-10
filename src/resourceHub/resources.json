@@ -32,65 +32,85 @@
   "blogs": [
     {
       "id": 1,
-      "title": "10 Signs You Might Be Experiencing Burnout",
-      "excerpt": "Academic burnout is more than just feeling tired. Learn to recognize the signs before it affects your health and grades...",
+      "title": "10 Signs You Might Be Struggling with Depression or Stress",
+      "excerpt": "It's normal to feel tired or low sometimes. But when these feelings last for weeks and start affecting your daily life, it might be a sign of depression, burnout, or stress.",
       "readTime": "5 min read",
-      "category": "Self-Care"
+      "category": "Self-Care",
+      "content": "# 10 Signs You Might Be Struggling with Depression or Stress\n\n> It's normal to feel tired or low sometimes. But when these feelings last for weeks and start affecting your daily life, it might be a sign of depression, burnout, or stress. Knowing the signs early can help you take steps toward feeling better.\n\n### Persistent Sadness\nWaking up feeling low or empty most days for over two weeks. Example: Once excited to start the day, now you feel weighed down. Tip: Keep a mood diary.\n\n### Loss of Interest or Pleasure\nActivities you once loved now feel dull. Example: A music lover no longer plays guitar. Tip: Reintroduce small joys.\n\n### Extreme Fatigue\nFeeling drained even after rest. Example: Sitting in your car outside a store unable to go in.\n\n### Difficulty Functioning in Daily Life\nStruggling with work, school, or personal care. Example: Missing deadlines.\n\n### Thoughts of Self-Harm or Suicide\nFeeling hopeless or believing others are better off without you. Tip: Seek immediate help.\n\n### Withdrawal from Friends and Family\nAvoiding calls, canceling plans. Example: Saying 'too busy' but feeling drained.\n\n### Changes in Sleep or Appetite\nSleeping too much or too little, eating far more or less.\n\n### Feeling Worthless or Guilty\nBlaming yourself for everything. Example: Overthinking mistakes.\n\n### Trouble Concentrating\nLosing focus easily. Example: Rereading paragraphs multiple times.\n\n### Physical Signs of Stress\nHeadaches, stomach issues, tense muscles.\n\n### Key Takeaway\nIf several of these signs sound familiar, you're not alone — and help is available. Talking to a counselor or loved one can be the first step to feeling better.",
+      "metaDescription": "Learn 10 early signs of depression, burnout, and stress — and simple steps you can take to start feeling better."
     },
     {
       "id": 2,
-      "title": "How to Support a Friend with Mental Health Challenges",
-      "excerpt": "When someone you care about is struggling, it can be hard to know how to help. These evidence-based approaches can make a difference...",
-      "readTime": "7 min read",
-      "category": "Relationships"
-    },
-    {
-      "id": 3,
-      "title": "The Science Behind Meditation and Stress Reduction",
-      "excerpt": "Research shows that regular meditation practice can physically change your brain. Here's what the studies reveal...",
-      "readTime": "8 min read",
-      "category": "Mindfulness"
-    },
-    {
-      "id": 4,
-      "title": "Navigating Social Anxiety in College Settings",
-      "excerpt": "Parties, group projects, and presentations can trigger social anxiety. Learn practical strategies to manage these situations...",
+      "title": "Supporting a Friend with Depression — Early Support",
+      "excerpt": "Depression often starts quietly. You may notice small changes before your friend does. Early support can make recovery easier and prevent symptoms from getting worse.",
       "readTime": "6 min read",
-      "category": "Anxiety"
-    }
-  ],
-  "guides": [
-    {
-      "id": 1,
-      "title": "Crisis Resource Handbook",
-      "description": "Immediate steps and resources for mental health emergencies",
-      "downloadLink": "#",
-      "pages": "12",
-      "format": "PDF"
-    },
-    {
-      "id": 2,
-      "title": "Daily Wellness Checklist",
-      "description": "A printable tracker for maintaining mental wellness habits",
-      "downloadLink": "#",
-      "pages": "5",
-      "format": "PDF"
+      "category": "Relationships",
+      "content": "# Supporting a Friend with Depression — Early Support\n\n> Depression often starts quietly. You may notice small changes before your friend does. Early support can make recovery easier and prevent symptoms from getting worse.\n\n### Be the Early Warning System\nNotice withdrawal, low energy, or changes in mood. Example: A talkative friend becomes quiet. Tip: Gently ask about it.\n\n### Offer Practical Help\nAssist with daily tasks like cooking or driving to appointments. Tip: Ask what you can take off their plate.\n\n### Attend Appointments Together\nYour presence can make therapy or medical visits less intimidating.\n\n### Key Takeaway\nEarly intervention means noticing changes, showing care without judgment, and offering concrete help.",
+      "metaDescription": "Learn how to spot early signs of depression in a friend and give supportive, judgment-free help from the start."
     },
     {
       "id": 3,
-      "title": "Campus-Specific Mental Health Resources",
-      "description": "Directory of support services available at your institution",
-      "downloadLink": "#",
-      "pages": "8",
-      "format": "PDF"
+      "title": "Supporting a Friend with Depression — Staying the Course",
+      "excerpt": "Recovery from depression is not quick. There will be ups and downs. Your role as a steady, patient supporter can help your friend stay on track.",
+      "readTime": "5 min read",
+      "category": "Relationships",
+      "content": "# Supporting a Friend with Depression — Staying the Course\n\n> Recovery from depression is not quick. There will be ups and downs. Your role as a steady, patient supporter can help your friend stay on track.\n\n### Show Unconditional Acceptance\nAvoid judgment. Example: A mother supported her daughter through every step.\n\n### Practice Gentle Tough Love\nEncourage small tasks without pressure. Example: Cooking together or short walks.\n\n### Celebrate Small Wins\nAcknowledge progress sincerely. Tip: Be specific in praise.\n\n### Key Takeaway\nSupport during recovery is about patience, encouragement, and helping your friend keep moving forward, even on tough days.",
+      "metaDescription": "Discover how to be a steady, supportive friend during a loved one's depression recovery — with patience, encouragement, and care."
     },
     {
       "id": 4,
-      "title": "Breathing Exercise Guide",
-      "description": "Step-by-step instructions for anxiety-reducing breathing techniques",
-      "downloadLink": "#",
-      "pages": "6",
-      "format": "PDF"
+      "title": "Supporting a Friend with Depression — Everyday Ways to Help",
+      "excerpt": "Once your friend feels better, your support is still important. Staying well means keeping healthy routines and connections.",
+      "readTime": "5 min read",
+      "category": "Relationships",
+      "content": "# Supporting a Friend with Depression — Everyday Ways to Help\n\n> Once your friend feels better, your support is still important. Staying well means keeping healthy routines and connections.\n\n### Strive for Normality\nTreat them like before, not fragile. Example: Talking about hobbies and sports.\n\n### Share Everyday Moments\nSimple activities restore belonging. Example: Doing chores together.\n\n### Give Emotional Sustenance\nShow empathy and acceptance. Tip: Listen without rushing to fix things.\n\n### Key Takeaway\nOngoing support helps your friend feel valued and connected, reducing the risk of relapse.",
+      "metaDescription": "Learn simple, everyday ways to help a friend maintain mental wellness after recovering from depression."
+    },
+    {
+      "id": 5,
+      "title": "How Meditation Helps Your Mind and Body",
+      "excerpt": "Meditation is more than sitting in silence — it's a proven tool for calming the mind, supporting the body, and improving emotional health.",
+      "readTime": "6 min read",
+      "category": "Mindfulness",
+      "content": "# How Meditation Helps Your Mind and Body\n\n> Meditation is more than sitting in silence — it's a proven tool for calming the mind, supporting the body, and improving emotional health.\n\n### Meditation Lowers Stress\nHelps with mood, sleep, and immunity. Example: Deep breathing before an exam.\n\n### Meditation Improves Emotional Health\nBoosts forgiveness and hope. Example: Processing past hurts calmly.\n\n### Meditation Boosts Focus\nTrains your mind to return to the present.\n\n### Benefits for the Body\nLowers blood pressure, improves sleep, strengthens immunity.\n\n### Key Takeaway\nMeditation gently trains your focus and emotions, creating a calmer mind and healthier body.",
+      "metaDescription": "Discover how meditation reduces stress, improves focus, and supports emotional health — backed by research."
+    },
+    {
+      "id": 6,
+      "title": "Different Types of Meditation and How to Start",
+      "excerpt": "There's no one right way to meditate. Finding a style you enjoy makes it easier to stick with the habit.",
+      "readTime": "7 min read",
+      "category": "Mindfulness",
+      "content": "# Different Types of Meditation and How to Start\n\n> There's no one right way to meditate. Finding a style you enjoy makes it easier to stick with the habit.\n\n### Mindfulness-Based Stress Reduction\nFocus on breath or sensations, return attention when it wanders.\n\n### Easwaran's Eight-Point Program\nRepeat a meaningful phrase or prayer silently.\n\n### How to Start\nFind a quiet spot, choose a time, pick a method, stay patient, practice regularly.\n\n### Overcoming Common Challenges\nCan't stop thinking? Notice thoughts instead. Too sleepy? Meditate earlier.\n\n### Key Takeaway\nChoose a style that feels natural, start small, and let the practice grow over time.",
+      "metaDescription": "Explore two beginner-friendly meditation styles and learn simple steps to start your own practice."
+    },
+    {
+      "id": 7,
+      "title": "Using Meditation to Build Long-Term Mental Strength",
+      "excerpt": "Meditation isn't just a quick stress fix — it's a long-term habit that strengthens your mind to handle life's challenges.",
+      "readTime": "6 min read",
+      "category": "Mindfulness",
+      "content": "# Using Meditation to Build Long-Term Mental Strength\n\n> Meditation isn't just a quick stress fix — it's a long-term habit that strengthens your mind to handle life's challenges.\n\n### Make It a Habit\nLink to daily activities, join a group, journal progress.\n\n### Use Meditation as a Reset Button\nPause before reacting to stressful situations.\n\n### Support Other Healthy Habits\nImproves sleep, reduces stress-eating, strengthens relationships.\n\n### Combine with Other Self-Care\nPair with walking, yoga, or gratitude journaling.\n\n### Key Takeaway\nThink of meditation as training for your mind. The more you practice, the more resilience and peace you build.",
+      "metaDescription": "Learn how to make meditation a daily habit to build resilience, improve focus, and stay calm under pressure."
+    },
+    {
+      "id": 8,
+      "title": "Understanding Anxiety: Symptoms and Coping Strategies",
+      "excerpt": "Anxiety is more than just feeling worried. Learn to recognize the symptoms and effective ways to manage them in daily life.",
+      "readTime": "7 min read",
+      "category": "Anxiety",
+      "content": "# Understanding Anxiety: Symptoms and Coping Strategies\n\nAnxiety is a natural response to stress, but when it becomes persistent and overwhelming, it can interfere with daily life. Recognizing the symptoms is the first step toward managing anxiety effectively.\n\n### Common Symptoms of Anxiety\n- Excessive worry or fear\n- Restlessness or feeling on edge\n- Difficulty concentrating\n- Irritability\n- Muscle tension\n- Sleep disturbances\n- Panic attacks\n\n### Effective Coping Strategies\n- Practice deep breathing exercises\n- Engage in regular physical activity\n- Limit caffeine and alcohol\n- Practice mindfulness and meditation\n- Establish a consistent sleep routine\n- Challenge negative thoughts\n\n### When to Seek Help\nIf anxiety is affecting your daily life, relationships, or work, consider speaking with a mental health professional. Therapy, medication, or a combination of both can be effective treatments.\n\n### Key Takeaway\nAnxiety is manageable with the right tools and support. By understanding your symptoms and implementing healthy coping strategies, you can reduce anxiety's impact on your life.",
+      "metaDescription": "Learn about anxiety symptoms, effective coping strategies, and when to seek professional help for better mental health."
+    },
+    {
+      "id": 9,
+      "title": "Building Resilience: Strategies for Mental Toughness",
+      "excerpt": "Resilience is the ability to bounce back from adversity. Discover practical strategies to build mental toughness and cope with life's challenges.",
+      "readTime": "8 min read",
+      "category": "Self-Care",
+      "content": "# Building Resilience: Strategies for Mental Toughness\n\nResilience is not about avoiding stress or adversity but about developing the capacity to recover from difficulties. It's a skill that can be cultivated with practice.\n\n### Key Components of Resilience\n- Emotional awareness and regulation\n- Impulse control\n- Optimism\n- Flexible thinking\n- Self-efficacy\n- Strong social connections\n\n### Strategies to Build Resilience\n1. **Develop a growth mindset**: View challenges as opportunities for growth.\n2. **Practice self-compassion**: Be kind to yourself during difficult times.\n3. **Build strong relationships**: Cultivate a support network of family and friends.\n4. **Set realistic goals**: Break large tasks into manageable steps.\n5. **Take care of your physical health**: Exercise, nutrition, and sleep impact mental resilience.\n6. **Practice mindfulness**: Stay present and non-judgmental of your experiences.\n7. **Learn from past experiences**: Reflect on how you've overcome previous challenges.\n\n### Maintaining Resilience\nBuilding resilience is an ongoing process. Regularly practicing these strategies can help you maintain mental toughness during both good times and bad.\n\n### Key Takeaway\nResilience is a learnable skill that enables you to navigate life's challenges with greater ease and come out stronger on the other side.",
+      "metaDescription": "Discover practical strategies to build mental resilience and develop the toughness needed to cope with life's challenges effectively."
     }
   ]
+
 }
