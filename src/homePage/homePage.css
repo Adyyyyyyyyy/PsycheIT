@@ -93,19 +93,19 @@ nav ul li a:hover {
 }
 
 .cta-button.secondary {
-  background-color: transparent;
-  border: 2px solid var(--color-dark-teal);
+  background-color: white;
+  border: 2px solid white;
   color: var(--color-dark-teal);
 }
 
 .cta-button.secondary:hover {
-  background-color: var(--color-dark-teal);
+  background-color: transparent;
   color: white;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 7, 45, 0.8), rgba(0, 7, 45, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
+  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-dark-teal) 100%);
   color: white;
   padding: 100px 0;
   text-align: center;
@@ -309,7 +309,7 @@ nav ul li a:hover {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-dark-gray) 100%);
+  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-dark-teal) 100%);
   color: white;
   padding: 80px 0;
   text-align: center;
