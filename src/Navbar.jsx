@@ -6,7 +6,7 @@ const NavBar = () => {
                 <div className="container header-content">
                   <div className="logo">
                     <i className="fas fa-brain"></i>
-                    PsycheIT
+                    <a><Link to="/">PsycheIT</Link></a>
                   </div>
                   <nav>
                     <ul>

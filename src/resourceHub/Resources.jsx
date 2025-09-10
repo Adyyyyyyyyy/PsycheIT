@@ -4,6 +4,8 @@ import NavBar from "../Navbar";
 import PHQ9Questionnaire from "./PHQ9";
 import GAD7Questionnaire from './GAD7';
 import resourcesData from "./resources.json";
+import { Link } from "react-router-dom";
+
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState("videos");
   const [activeQuestionnaire, setActiveQuestionnaire] = useState("phq9"); 
@@ -100,7 +102,7 @@ const Resources = () => {
                     <p className="blog-excerpt">{blog.excerpt}</p>
                     <div className="blog-meta">
                       <span className="read-time">{blog.readTime}</span>
-                      <a href="#" className="read-more">Read More <i className="fas fa-arrow-right"></i></a>
+                      <a className="read-more"><Link to="/blogs">Read More</Link></a>
                     </div>
                   </div>
                 ))}
