@@ -230,29 +230,181 @@
   text-decoration: underline;
 }
 
-/* Guides Grid */
-.guides-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.guide-card {
+/* Questionnaire Styles */
+.questionnaire-container {
   background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 7, 45, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.questionnaire-intro {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.questionnaire-intro h3 {
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+}
+
+.questionnaire-tabs {
   display: flex;
-  flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.guide-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 7, 45, 0.1);
+.questionnaire-tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
 }
 
+.questionnaire-tab.active {
+  color: var(--color-dark-teal);
+  border-bottom-color: var(--color-dark-teal);
+}
+
+.questionnaire-tab:hover {
+  color: var(--color-dark-teal);
+}
+
+.questionnaire {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.questionnaire-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.questionnaire-header h4 {
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+}
+input[type="radio"] {
+  accent-color: var(--color-dark-teal);
+}
+.question {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.question p {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.options label:hover {
+  border-color: var(--color-dark-teal);
+  background: #f0f7ff;
+}
+
+.options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.calculate-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: var(--color-dark-teal);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 30px 0;
+}
+
+.calculate-btn:hover {
+  background: var(--color-dark-blue);
+}
+
+.results {
+  background: #f0f9ff;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-dark-teal);
+}
+
+.results h4 {
+  color: var(--color-dark-teal);
+  margin-bottom: 10px;
+}
+
+.score-interpretation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-dark-teal);
+}
+
+.score-interpretation ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.score-interpretation li {
+  margin-bottom: 5px;
+  color: #3d4550;
+}
+
+.disclaimer {
+  font-style: italic;
+  color: black;
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--color-light-blue);
+  border-radius: 6px;
+  border-left: 4px solid var(--color-dark-teal);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+  
+  .questionnaire-tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .questionnaire-tab {
+    text-align: center;
+  }
+}
 .guide-icon {
   background: var(--color-teal);
   color: var(--color-dark-teal);
@@ -265,46 +417,6 @@
   font-size: 20px;
   margin-bottom: 20px;
 }
-
-.guide-info {
-  flex-grow: 1;
-  margin-bottom: 20px;
-}
-
-.guide-info h3 {
-  color: var(--color-dark-blue);
-  margin-bottom: 10px;
-}
-
-.guide-info p {
-  color: var(--color-dark-gray);
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.guide-meta {
-  color: var(--color-dark-gray);
-  font-size: 0.9rem;
-}
-
-.download-btn {
-  background: var(--color-dark-teal);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: background-color 0.3s;
-}
-
-.download-btn:hover {
-  background: #004d43;
-}
-
 /* Additional Resources Section */
 .additional-resources {
   background: linear-gradient(to bottom, var(--color-light-blue), var(--color-teal));
