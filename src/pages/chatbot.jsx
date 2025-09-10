@@ -36,6 +36,10 @@ export default function Chatbot() {
 
       // map intent -> friendly response + tips
       const intentMap = {
+        depression: {
+          reply: "I'm sorry you're feeling this way. It might help to talk to a trusted person or try a short walk.",
+          tips: ["Talk to a friend", "Short walk", "5 deep breaths"]
+        },
         academic: {
           reply: "Exams/study stress is common. Try breaking tasks into 25-min slots and taking short walks.",
           tips: ["Pomodoro 25/5", "Short walk", "5 deep breaths"]
