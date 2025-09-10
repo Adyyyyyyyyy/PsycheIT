@@ -147,36 +147,30 @@ const HomePage = () => {
       <section className="testimonials">
         <div className="container">
           <div className="section-title">
-            <h2>What Students Are Saying</h2>
-            <p>Hear from students who have benefited from our platform</p>
+            <h2>The Challenge We Are Solving</h2>
+            
           </div>
           <div className="testimonials-grid">
             <div className="testimonial">
               <div className="testimonial-content">
-                <p>"The AI chat helped me through a panic attack at 2 AM when no one else was available. It guided me through breathing exercises that actually worked."</p>
+                <b>Stigma-Free Access</b>
+                <p>Many students hesitate to seek help because they fear being judged or misunderstood. Our platform ensures private, stigma-free first-line support so no one suffers in silence.</p>
               </div>
-              <div className="testimonial-author">
-                <h4>Rahul M.</h4>
-                <p>Engineering Student</p>
-              </div>
+
             </div>
             <div className="testimonial">
               <div className="testimonial-content">
-                <p>"I was hesitant to seek help because of the stigma, but the anonymous peer support forum made me feel safe to share my struggles."</p>
+                <b>Early Detection</b>
+                <p>Stress, anxiety, and depression often go unnoticed until they become severe. By providing simple, AI-guided check-ins, we help identify problems early and guide students toward the right support.</p>
               </div>
-              <div className="testimonial-author">
-                <h4>Priya S.</h4>
-                <p>Arts Student</p>
-              </div>
+              
             </div>
             <div className="testimonial">
               <div className="testimonial-content">
-                <p>"Booking counseling sessions through the app was so easy and private. I didn't have to worry about running into someone I know at the counseling center."</p>
+                <b>Bridging the Gap</b>
+                <p>Most colleges lack structured mental health systems, especially in rural areas. Our solution connects students with counselors, peer groups, and self-help resources in one accessible platform.</p>
               </div>
-              <div className="testimonial-author">
-                <h4>Arjun K.</h4>
-                <p>Business Student</p>
-              </div>
+              
             </div>
           </div>
         </div>
