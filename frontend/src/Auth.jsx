@@ -149,12 +149,21 @@ function Auth() {
         <div className="mode-toggle">
           <button
             onClick={() => {
-              setMode(mode === "signup" ? "login" : "signup");
-              setSignupDone(false);
-              setGeneratedCreds(null);
-              setCollegeCode("");
-              setUserId("");
-              setPassword("");
+              if (mode === "signup") {
+                setMode("login");
+                // Auto-fill login form with generated credentials if they exist
+                if (generatedCreds) {
+                  setUserId(generatedCreds.userId);
+                  setPassword(generatedCreds.password);
+                }
+              } else {
+                setMode("signup");
+                setSignupDone(false);
+                setGeneratedCreds(null);
+                setCollegeCode("");
+                setUserId("");
+                setPassword("");
+              }
             }}
             className="toggle-button"
           >

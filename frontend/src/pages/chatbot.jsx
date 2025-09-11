@@ -7,12 +7,10 @@ import Navbar from "../Navbar";
 export default function Chatbot() {
   // Dummy previous chat history
   const [history, setHistory] = useState([
-    { id: 1, title: "Chat on 10 Sep", messages: [
+    { id: 1, title: "Chat on 11 Sep", messages: [
       { sender: "bot", text: "Hi 👋 I'm your mental health buddy. What's on your mind?" },
-      { sender: "user", text: "I can't sleep" },
-      { sender: "bot", text: "Sleep issues affect focus. Try a wind-down routine and calming audio before bed." }
-    ] },
-    { id: 2, title: "Chat on 9 Sep", messages: [
+      ] },
+    { id: 2, title: "Chat on 10 Sep", messages: [
       { sender: "bot", text: "Hi 👋 I'm your mental health buddy. What's on your mind?" },
       { sender: "user", text: "Exam stress" },
       { sender: "bot", text: "Exams/study stress is common. Try breaking tasks into 25-min slots and taking short walks." }
