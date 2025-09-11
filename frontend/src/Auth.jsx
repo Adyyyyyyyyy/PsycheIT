@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Auth.css";
 
 function Auth() {
   const [collegeCode, setCollegeCode] = useState("");
@@ -43,104 +44,125 @@ function Auth() {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
-      <h2>{mode === "signup" ? "Sign Up" : "Login"}</h2>
+    <div className="auth-page">
+      <div className="auth-container">
+        <div className="auth-header">
+          <h2>{mode === "signup" ? "Create Account" : "Welcome Back"}</h2>
+          <p>{mode === "signup" ? "Get your credentials to access PsycheIT" : "Sign in to continue your mental wellness journey"}</p>
+        </div>
 
-      {mode === "signup" ? (
-        <>
-          <input
-            type="text"
-            placeholder="Enter College Code"
-            value={collegeCode}
-            onChange={(e) => setCollegeCode(e.target.value)}
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-          <button
-            onClick={handleSignup}
-            disabled={signupDone}
-            style={{
-              width: "100%",
-              padding: "10px",
-              backgroundColor: signupDone ? "gray" : "#007bff",
-              color: "white",
-              border: "none",
-              cursor: signupDone ? "not-allowed" : "pointer",
-            }}
-          >
-            {signupDone ? "Credentials Generated" : "Generate Credentials"}
-          </button>
+        <div className="auth-form">
+          {mode === "signup" ? (
+            <>
+              <div className="form-group">
+                <label htmlFor="collegeCode">College Code</label>
+                <input
+                  id="collegeCode"
+                  type="text"
+                  placeholder="Enter your college code"
+                  value={collegeCode}
+                  onChange={(e) => setCollegeCode(e.target.value)}
+                  className="form-input"
+                />
+              </div>
+              
+              <button
+                onClick={handleSignup}
+                disabled={signupDone || !collegeCode.trim()}
+                className={`auth-button ${signupDone ? 'disabled' : 'primary'}`}
+              >
+                {signupDone ? (
+                  <>
+                    <i className="fas fa-check"></i>
+                    Credentials Generated
+                  </>
+                ) : (
+                  <>
+                    <i className="fas fa-user-plus"></i>
+                    Generate Credentials
+                  </>
+                )}
+              </button>
 
-          {generatedCreds && (
-            <div
-              style={{
-                marginTop: "20px",
-                padding: "10px",
-                border: "1px solid #ccc",
-              }}
-            >
-              <p>
-                <strong>User ID:</strong> {generatedCreds.userId}
-              </p>
-              <p>
-                <strong>Password:</strong> {generatedCreds.password}
-              </p>
-              <p style={{ color: "red", fontSize: "14px" }}>
-                ⚠️ Save these credentials securely. They will be needed for
-                login.
-              </p>
-            </div>
+              {generatedCreds && (
+                <div className="credentials-display">
+                  <h3>
+                    <i className="fas fa-key"></i>
+                    Your Login Credentials
+                  </h3>
+                  
+                  <div className="credential-item">
+                    <div className="credential-label">User ID:</div>
+                    <div className="credential-value">{generatedCreds.userId}</div>
+                  </div>
+                  
+                  <div className="credential-item">
+                    <div className="credential-label">Password:</div>
+                    <div className="credential-value">{generatedCreds.password}</div>
+                  </div>
+                  
+                  <div className="warning-message">
+                    <i className="fas fa-exclamation-triangle warning-icon"></i>
+                    <span>Please save these credentials securely. You'll need them to login.</span>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              <div className="form-group">
+                <label htmlFor="userId">User ID</label>
+                <input
+                  id="userId"
+                  type="text"
+                  placeholder="Enter your User ID"
+                  value={userId}
+                  onChange={(e) => setUserId(e.target.value)}
+                  className="form-input"
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="form-input"
+                />
+              </div>
+              
+              <button
+                onClick={handleLogin}
+                disabled={!userId.trim() || !password.trim()}
+                className="auth-button success"
+              >
+                <i className="fas fa-sign-in-alt"></i>
+                Sign In
+              </button>
+            </>
           )}
-        </>
-      ) : (
-        <>
-          <input
-            type="text"
-            placeholder="User ID"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-          <button
-            onClick={handleLogin}
-            style={{
-              width: "100%",
-              padding: "10px",
-              backgroundColor: "#28a745",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            Login
-          </button>
-        </>
-      )}
+        </div>
 
-      <div style={{ marginTop: "15px" }}>
-        <button
-          onClick={() => {
-            setMode(mode === "signup" ? "login" : "signup");
-            setSignupDone(false);
-          }}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#007bff",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          {mode === "signup"
-            ? "Already have an account? Login"
-            : "New user? Sign up"}
-        </button>
+        <div className="mode-toggle">
+          <button
+            onClick={() => {
+              setMode(mode === "signup" ? "login" : "signup");
+              setSignupDone(false);
+              setGeneratedCreds(null);
+              setCollegeCode("");
+              setUserId("");
+              setPassword("");
+            }}
+            className="toggle-button"
+          >
+            {mode === "signup"
+              ? "Already have an account? Sign in"
+              : "New to PsycheIT? Create account"}
+          </button>
+        </div>
       </div>
     </div>
   );
