@@ -15,12 +15,12 @@ const BookingPage = () => {
         });
       } else {
         // If Calendly script hasn't loaded yet, wait and try again
-        setTimeout(initCalendly, 100);
+        setTimeout(initCalendly, 30);
       }
     };
 
     // Small delay to ensure the DOM element exists
-    setTimeout(initCalendly, 100);
+    setTimeout(initCalendly, 10);
   }, []);
   return (
     <div className="booking-page">
@@ -35,7 +35,7 @@ const BookingPage = () => {
               <p>Schedule a confidential session with our professional counselors. We're here to support your mental wellness journey.</p>
             </div>
             <div className="booking-header-image">
-              <img src="https://placehold.co/400x300/A5D6A7/002c42?text=Counseling+Session" alt="Counseling session" />
+              <img src="https://cdni.iconscout.com/illustration/premium/thumb/psychology-consultant-illustration-svg-png-download-4023754.png" alt="Counseling session" />
             </div>
           </div>
         </div>

@@ -26,10 +26,10 @@ const NavBar = () => {
         
         <nav className={isMenuOpen ? "nav-open" : ""}>
           <ul>
-            <li><a href="#features">Features</a></li>
+            <li><Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>SHANTI</Link></li>
             <li><Link to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
             <li><Link to="/forum" onClick={() => setIsMenuOpen(false)}>Forum</Link></li>
-            <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Counselling</Link></li>
+            <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Book Counselor</Link></li>
           </ul>
         </nav>
         <a href="" className="login-button">Student Login</a>
