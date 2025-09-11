@@ -16,15 +16,16 @@ const Resources = () => {
       <NavBar/>
       <header className="resources-header">
         <div className="resources-header-content">
+          <div className="resources-header-image">
+            <img src="src\assets\resourceHero.webp" 
+              alt="Mental wellness resources" 
+            />
+          </div>
           <div className="resources-header-text">
             <h1>Mental Health Resources</h1>
             <p>Access videos, articles, and guides to support your mental wellness journey. All resources are carefully curated by mental health professionals.</p>
           </div>
-          <div className="resources-header-image">
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/mental-health-illustration-svg-png-download-3016778.png" 
-              alt="Mental wellness resources" 
-            />
-          </div>
+          
         </div>
       </header>
 
@@ -174,7 +175,7 @@ const Resources = () => {
               <h3>Crisis Help Line</h3>
               <p>National Institute of Mental Health and Neurosciences (NIMHANS) Helpline</p>
               <a href="tel:080-46110007" className="crisis-link">
-                <i className="fas fa-comment"></i> Call 080-46110007	
+                <i className="fas fa-phone"></i> Call 080-46110007	
               </a>
             </div>
             

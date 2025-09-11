@@ -15,16 +15,18 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <section className="hero">
-        <div className="container">
-          <div className="herotext">
-          <h1>Mental Wellness for Campus Life</h1>
-          <p>Providing stigma-free, accessible psychological support for students through AI-guided first aid, confidential counseling, and peer support communities.</p>
-          <div className="hero-buttons">
-            <Link to="/dashboard" className="cta-button">Get Started Today</Link>
-            <a href="#learn-more" className="cta-button secondary">Learn More</a>
+        <div className="container hero-container">
+          <div className="hero-text">
+            <h1>Mental Wellness for Campus Life</h1>
+            <p>Providing stigma-free, accessible psychological support for students through AI-guided first aid, confidential counseling, and peer support communities.</p>
+            <div className="hero-buttons">
+              <Link to="/dashboard" className="cta-button">Get Started Today</Link>
+              <a href="#learn-more" className="cta-button secondary">Learn More</a>
+            </div>
           </div>
+          <div className="hero-image">
+            <img src="src\assets\heroHome.png!sw800" alt="Students supporting each other's mental health" />
           </div>
-          <img src="" alt="" srcset="" />
         </div>
       </section>
 
@@ -181,18 +183,23 @@ const HomePage = () => {
       
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to prioritize your mental health?</h2>
-            <p>Join thousands of students who have found support through our platform. Anonymous, secure, and available 24/7.</p>
-            <div className="cta-buttons">
-              <Link to="/dashboard" className="cta-button">Sign Up Now</Link>
-              <a href="#demo" className="cta-button secondary">Request Demo</a>
-            </div>
-          </div>
+<section className="cta-section" id="demo">
+  <div className="container">
+    <div className="cta-container">
+      <div className="cta-image">
+        <img src="https://img.pikbest.com/element_our/20231004/bg/8d1dde213df91.png!f305cw" alt="Students supporting each other's mental health" />
+      </div>
+      <div className="cta-content">
+        <h2>Ready to prioritize your mental health?</h2>
+        <p>Join thousands of students who have found support through our platform. Anonymous, secure, and available 24/7.</p>
+        <div className="cta-buttons">
+          <Link to="/dashboard" className="cta-button">Sign Up Now</Link>
+          <a href="#demo" className="cta-button secondary">Request Demo</a>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer>
@@ -208,7 +215,7 @@ const HomePage = () => {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#resources">Resources</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">Forum</a></li>
               </ul>
             </div>
             <div className="footer-column">

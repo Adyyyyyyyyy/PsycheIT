@@ -7,7 +7,7 @@
 }
 
 .forum-header {
-  background: linear-gradient(135deg, #00695D 0%, #004d43 100%);
+  background: linear-gradient(105deg, #002c42 0%, #4DB6AC 100%);
   color: white;
   padding: 25px 30px;
   position: relative;
@@ -110,12 +110,12 @@
 }
 
 .submit-btn {
-  background: #00695D;
+  background: #002c42;
   color: white;
 }
 
 .submit-btn:hover {
-  background: #005a4f;
+  background: #001d2c;
 }
 
 .forum-content {
@@ -154,7 +154,7 @@
 }
 
 .category-list li.active {
-  background: #00695D;
+  background: #002c42;
   color: white;
   font-weight: 600;
 }
@@ -181,7 +181,7 @@
 }
 
 .forum-guidelines li i {
-  color: #00695D;
+  color: #002c42;
   width: 20px;
 }
 
@@ -300,8 +300,8 @@
 }
 
 .tag {
-  background: #CCFBF1;
-  color: #00695D;
+  background: #80DEEA;
+  color: #002c42;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 13px;

@@ -1,9 +1,9 @@
 :root {
-  --color-dark-blue: #00072D;
+  --color-dark-blue: #002c42;
   --color-dark-gray: #37363C;
   --color-light-blue: #B8D7FF;
   --color-teal: #CCFBF1;
-  --color-dark-teal: #00695D;
+  --color-dark-teal: #4DB6AC;
 }
 .blog-page {
   min-height: 100vh;

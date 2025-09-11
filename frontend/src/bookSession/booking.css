@@ -1,0 +1,274 @@
+/* BookingPage.css */
+:root {
+  --color-primary: #A5D6A7;
+  --color-primary-dark: #29852f;
+  --color-secondary: #FFE0B2;
+  --color-secondary-dark: #FFCC80;
+  --color-accent: #80DEEA;
+  --color-accent-dark: #4DB6AC;
+  --color-background: #F5F5F5;
+  --color-text: #002c42;
+  --color-text-light: #424a4e;
+  --color-white: #FFFFFF;
+}
+
+.booking-page {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Booking Header */
+.booking-header {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  color: var(--color-text);
+  padding: 80px 0;
+}
+
+.booking-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.booking-header-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.booking-header-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.booking-header-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--color-text-light);
+}
+
+.booking-header-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-header-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+/* Counselors Section */
+.counselors-section {
+  padding: 80px 0;
+  background-color: var(--color-white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+}
+
+.section-title p {
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.counselors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.counselor-card {
+  background: var(--color-background);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.counselor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.counselor-image {
+  margin-bottom: 20px;
+}
+
+.counselor-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.counselor-card h3 {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.counselor-specialty {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.counselor-bio {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.select-counselor-btn {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.select-counselor-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Calendly Section */
+.calendly-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+}
+
+.calendly-container {
+  background: var(--color-white);
+  padding-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.calendly-container h2 {
+  color: var(--color-text);
+}
+
+.calendly-container p {
+  color: var(--color-text-light);
+}
+
+.calendly-embed {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 10px;
+}
+
+.calendly-inline-widget iframe {
+  border-radius: 10px;
+}
+
+/* FAQ Section */
+.booking-faq {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+.faq-item p {
+  color: var(--color-text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .booking-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .booking-header-text {
+    max-width: 100%;
+  }
+  
+  .counselors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-header-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .calendly-container {
+    padding: 25px;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-header {
+    padding: 60px 0;
+  }
+  
+  .booking-header-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .counselors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .counselor-card {
+    padding: 20px;
+  }
+}
