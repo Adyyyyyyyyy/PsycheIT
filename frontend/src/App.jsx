@@ -8,13 +8,16 @@ import BlogPage from "./resourceHub/AllBlogs";
 import PeerForum from "./PeerForum/PeerForum";
 import Auth from "./auth";
 import ProtectedRoute from "./components/ProtectedRoute";
-import BookingPage from './bookSession/booking'
+import BookingPage from './bookSession/booking';
+import ScreeningTest from './pages/ScreeningTest';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<HomePage />} />
@@ -67,6 +70,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <BookingPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/screening"
+            element={
+              <ProtectedRoute>
+                <ScreeningTest />
               </ProtectedRoute>
             }
           />

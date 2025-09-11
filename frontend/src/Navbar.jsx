@@ -1,12 +1,50 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./NavStyle.css";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check authentication status on component mount and when localStorage changes
+  useEffect(() => {
+    const checkAuthStatus = () => {
+      const token = localStorage.getItem("token");
+      setIsLoggedIn(!!token);
+    };
+
+    checkAuthStatus();
+
+    // Listen for storage changes (in case user logs out in another tab)
+    window.addEventListener('storage', checkAuthStatus);
+    
+    return () => {
+      window.removeEventListener('storage', checkAuthStatus);
+    };
+  }, []);
+
+  // Also check auth status when route changes (for when user logs in)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setIsMenuOpen(false);
+    navigate("/");
+  };
+
+  const handleLogin = () => {
+    setIsMenuOpen(false);
+    navigate("/auth");
   };
 
   return (
@@ -26,13 +64,24 @@ const NavBar = () => {
         
         <nav className={isMenuOpen ? "nav-open" : ""}>
           <ul>
-            <li><a href="#features">Features</a></li>
+            <li><Link to="/chatbot" onClick={() => setIsMenuOpen(false)}>SHANTI</Link></li>
             <li><Link to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
             <li><Link to="/forum" onClick={() => setIsMenuOpen(false)}>Forum</Link></li>
-            <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Counselling</Link></li>
+            <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Book Counselor</Link></li>
+            <li><Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</Link></li>
           </ul>
         </nav>
-        <a href="" className="login-button">Student Login</a>
+        
+        {/* Conditional rendering based on authentication status */}
+        {isLoggedIn ? (
+          <button className="login-button logout-button" onClick={handleLogout}>
+            Sign Out
+          </button>
+        ) : (
+          <button className="login-button" onClick={handleLogin}>
+            Student Login
+          </button>
+        )}
       </div>
     </header>
   );

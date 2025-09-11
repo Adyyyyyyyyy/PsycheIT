@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import "./ResourcesPage.css";
 import NavBar from "../Navbar";
-import PHQ9Questionnaire from "./PHQ9";
-import GAD7Questionnaire from './GAD7';
 import resourcesData from "./resources.json";
 import { Link } from "react-router-dom";
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState("videos");
-  const [activeQuestionnaire, setActiveQuestionnaire] = useState("phq9"); 
   const resources = resourcesData;
 
   return (
@@ -44,12 +41,6 @@ const Resources = () => {
               onClick={() => setActiveCategory('blogs')}
             >
               <i className="fas fa-blog"></i> Articles & Blogs
-            </button>
-            <button 
-              className={`resource-tab ${activeCategory === 'guides' ? 'active' : ''}`}
-              onClick={() => setActiveCategory('guides')}
-            >
-              <i className="fas fa-book"></i> Screening Test
             </button>
           </div>
         </div>
@@ -110,49 +101,6 @@ const Resources = () => {
               </div>
             </div>
           )}
-
-          {/* Guides Section */}
-{activeCategory === 'guides' && (
-  <div className="guides-grid">
-    <h2 className="resources-section-title">Mental Health Screening</h2>
-    <p className="resources-section-subtitle">
-      Take these brief self-assessment questionnaires to better understand your mental health
-    </p>
-    
-    <div className="questionnaire-container">
-      <div className="questionnaire-intro">
-        <h3>PHQ-9 & GAD-7 Screening Tools</h3>
-        <p>
-          These are standard screening tools used by healthcare professionals. 
-          Your responses are anonymous and not stored. This is for self-assessment only.
-        </p>
-      </div>
-      
-      <div className="questionnaire-tabs">
-        <button 
-          className={`questionnaire-tab ${activeQuestionnaire === 'phq9' ? 'active' : ''}`}
-          onClick={() => setActiveQuestionnaire('phq9')}
-        >
-          PHQ-9 (Depression)
-        </button>
-        <button 
-          className={`questionnaire-tab ${activeQuestionnaire === 'gad7' ? 'active' : ''}`}
-          onClick={() => setActiveQuestionnaire('gad7')}
-        >
-          GAD-7 (Anxiety)
-        </button>
-      </div>
-      
-      {activeQuestionnaire === 'phq9' && (
-        <PHQ9Questionnaire />
-      )}
-      
-      {activeQuestionnaire === 'gad7' && (
-        <GAD7Questionnaire />
-      )}
-    </div>
-  </div>
-)}
         </div>
       </section>
 

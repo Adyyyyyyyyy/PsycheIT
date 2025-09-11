@@ -36,6 +36,19 @@ background-color: var(--color-background);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Logout button specific styles */
+.logout-button {
+  background-color: #ff6b6b !important;
+  color: var(--color-white) !important;
+}
+
+.logout-button:hover {
+  background-color: #ff5252 !important;
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
 .header-content {
   display: flex;
   justify-content: space-between;
