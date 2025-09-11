@@ -1,121 +1,149 @@
-// src/pages/Auth.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Auth() {
-  const [isSignup, setIsSignup] = useState(false);
   const [collegeCode, setCollegeCode] = useState("");
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [credentials, setCredentials] = useState(null);
+  const [generatedCreds, setGeneratedCreds] = useState(null);
+  const [mode, setMode] = useState("signup"); // "signup" or "login"
+  const [signupDone, setSignupDone] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSignup = async () => {
+    const res = await fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ collegeCode }),
+    });
 
-    if (isSignup) {
-      // Call backend signup
-      const res = await fetch("http://localhost:5000/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ collegeCode }),
-      });
-      const data = await res.json();
-      if (data.error) {
-        alert(data.error);
-      } else {
-        setCredentials({ userId: data.userId, password: data.password });
-      }
+    const data = await res.json();
+    if (data.userId) {
+      setGeneratedCreds({ userId: data.userId, password: data.password });
+      setSignupDone(true); // disable button
     } else {
-      // Call backend login
-      const res = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, password }),
-      });
-      const data = await res.json();
-      if (data.error) {
-        alert(data.error);
-      } else {
-        localStorage.setItem("token", data.token); // Save JWT
-        navigate("/dashboard");
-      }
+      alert("Signup failed");
+    }
+  };
+
+  const handleLogin = async () => {
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId, password }),
+    });
+
+    const data = await res.json();
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+      navigate("/dashboard");
+    } else {
+      alert("Login failed");
     }
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.title}>{isSignup ? "Signup" : "Login"}</h2>
-        <form onSubmit={handleSubmit} style={styles.form}>
-          {isSignup ? (
-            <>
-              <input
-                type="text"
-                placeholder="College Code"
-                value={collegeCode}
-                onChange={(e) => setCollegeCode(e.target.value)}
-                style={styles.input}
-                required
-              />
-            </>
-          ) : (
-            <>
-              <input
-                type="text"
-                placeholder="User ID"
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
-                style={styles.input}
-                required
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                style={styles.input}
-                required
-              />
-            </>
-          )}
+    <div style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
+      <h2>{mode === "signup" ? "Sign Up" : "Login"}</h2>
 
-          <button type="submit" style={styles.button}>
-            {isSignup ? "Signup" : "Login"}
+      {mode === "signup" ? (
+        <>
+          <input
+            type="text"
+            placeholder="Enter College Code"
+            value={collegeCode}
+            onChange={(e) => setCollegeCode(e.target.value)}
+            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+          />
+          <button
+            onClick={handleSignup}
+            disabled={signupDone}
+            style={{
+              width: "100%",
+              padding: "10px",
+              backgroundColor: signupDone ? "gray" : "#007bff",
+              color: "white",
+              border: "none",
+              cursor: signupDone ? "not-allowed" : "pointer",
+            }}
+          >
+            {signupDone ? "Credentials Generated" : "Generate Credentials"}
           </button>
-        </form>
 
-        {/* Show credentials after signup */}
-        {credentials && (
-          <div style={styles.credentialsBox}>
-            <h4>🎉 Your account has been created!</h4>
-            <p><strong>User ID:</strong> {credentials.userId}</p>
-            <p><strong>Password:</strong> {credentials.password}</p>
-            <small>Please save these credentials safely for future logins.</small>
-          </div>
-        )}
+          {generatedCreds && (
+            <div
+              style={{
+                marginTop: "20px",
+                padding: "10px",
+                border: "1px solid #ccc",
+              }}
+            >
+              <p>
+                <strong>User ID:</strong> {generatedCreds.userId}
+              </p>
+              <p>
+                <strong>Password:</strong> {generatedCreds.password}
+              </p>
+              <p style={{ color: "red", fontSize: "14px" }}>
+                ⚠️ Save these credentials securely. They will be needed for
+                login.
+              </p>
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          <input
+            type="text"
+            placeholder="User ID"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+          />
+          <button
+            onClick={handleLogin}
+            style={{
+              width: "100%",
+              padding: "10px",
+              backgroundColor: "#28a745",
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Login
+          </button>
+        </>
+      )}
 
-        <p style={styles.toggle}>
-          {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
-          <span style={styles.link} onClick={() => setIsSignup(!isSignup)}>
-            {isSignup ? "Login" : "Signup"}
-          </span>
-        </p>
+      <div style={{ marginTop: "15px" }}>
+        <button
+          onClick={() => {
+            setMode(mode === "signup" ? "login" : "signup");
+            setSignupDone(false);
+          }}
+          style={{
+            background: "none",
+            border: "none",
+            color: "#007bff",
+            cursor: "pointer",
+            textDecoration: "underline",
+          }}
+        >
+          {mode === "signup"
+            ? "Already have an account? Login"
+            : "New user? Sign up"}
+        </button>
       </div>
     </div>
   );
 }
-
-const styles = {
-  container: { display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#f3f4f6" },
-  card: { background: "#fff", padding: "2rem", borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0,0,0,0.1)", width: "350px" },
-  title: { textAlign: "center", marginBottom: "1rem" },
-  form: { display: "flex", flexDirection: "column" },
-  input: { padding: "0.8rem", margin: "0.5rem 0", borderRadius: "6px", border: "1px solid #ccc" },
-  button: { background: "#2563eb", color: "#fff", padding: "0.8rem", border: "none", borderRadius: "6px", cursor: "pointer", marginTop: "1rem" },
-  toggle: { marginTop: "1rem", textAlign: "center" },
-  link: { color: "#2563eb", cursor: "pointer" },
-  credentialsBox: { marginTop: "1.5rem", padding: "1rem", border: "1px solid #ddd", borderRadius: "8px", background: "#f9fafb" },
-};
 
 export default Auth;
