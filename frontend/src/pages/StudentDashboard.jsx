@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
 import NavBar from "../Navbar";
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [userId, setUserId] = useState("User");
+
+  // Function to decode JWT and extract user ID
+  const getUserIdFromToken = () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return "User";
+      
+      // JWT has 3 parts separated by dots: header.payload.signature
+      const payload = token.split('.')[1];
+      if (!payload) return "User";
+      
+      // Decode base64 payload
+      const decodedPayload = JSON.parse(atob(payload));
+      return decodedPayload.userId || "User";
+    } catch (error) {
+      console.error("Error decoding token:", error);
+      return "User";
+    }
+  };
+
+  useEffect(() => {
+    const userIdFromToken = getUserIdFromToken();
+    setUserId(userIdFromToken);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // clear JWT
     navigate("/auth");
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const handleViewAccount = () => {
+    // Handle view account functionality
+    console.log("View account credentials");
+    setShowDropdown(false);
   };
 
   return (
@@ -17,14 +53,72 @@ const StudentDashboard = () => {
 
       <div className="main-content">
         <div className="welcome-section">
-          <h2>Welcome back, User</h2>
+          <h2>Welcome back, {userId}</h2>
           <p>How are you feeling today? I'm here to help with your mental wellness.</p>
-          <button onClick={handleLogout} style={{ marginTop: "1rem", padding: "0.5rem 1rem", background: "#ef4444", color: "white", border: "none", borderRadius: "6px", cursor: "pointer" }}>
-            Sign Out
-          </button>
+        </div>
+
+        {/* Feature Tiles Section */}
+        <div className="features-section">
+          <div className="feature-tile">
+            <div className="feature-icon">
+              <i className="fas fa-comments"></i>
+            </div>
+            <h3>AI Chatbot Support</h3>
+            <p>Get instant mental health support and guidance from our AI-powered chatbot, available 24/7.</p>
+          </div>
+          
+          <div className="feature-tile">
+            <div className="feature-icon">
+              <i className="fas fa-users"></i>
+            </div>
+            <h3>Peer Forum</h3>
+            <p>Connect with others in a safe space to share experiences and support each other's mental wellness journey.</p>
+          </div>
+          
+          <div className="feature-tile">
+            <div className="feature-icon">
+              <i className="fas fa-book"></i>
+            </div>
+            <h3>Resource Hub</h3>
+            <p>Access mental health articles, self-assessment tools like PHQ-9 and GAD-7, and educational content.</p>
+          </div>
+          
+          <div className="feature-tile">
+            <div className="feature-icon">
+              <i className="fas fa-calendar-check"></i>
+            </div>
+            <h3>Book Sessions</h3>
+            <p>Schedule professional therapy sessions with qualified mental health practitioners at your convenience.</p>
+          </div>
+          
+          <div className="feature-tile">
+            <div className="feature-icon">
+              <i className="fas fa-chart-line"></i>
+            </div>
+            <h3>Progress Tracking</h3>
+            <p>Monitor your mental wellness journey with personalized insights and progress tracking tools.</p>
+          </div>
         </div>
       </div>
 
+      {/* Profile Button - Bottom Left */}
+      <div className="profile-button" onClick={toggleDropdown}>
+        <i className="fas fa-user"></i>
+        {showDropdown && (
+          <div className="profile-dropdown">
+            <div className="dropdown-item" onClick={handleViewAccount}>
+              <i className="fas fa-id-card"></i>
+              View Account
+            </div>
+            <div className="dropdown-item" onClick={handleLogout}>
+              <i className="fas fa-sign-out-alt"></i>
+              Sign Out
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Chatbot Button - Bottom Right */}
       <Link to="/chatbot" className="robot-icon">
         <i className="fas fa-robot"></i>
       </Link>
