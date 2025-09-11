@@ -59,44 +59,62 @@ const StudentDashboard = () => {
 
         {/* Feature Tiles Section */}
         <div className="features-section">
-          <div className="feature-tile">
-            <div className="feature-icon">
-              <i className="fas fa-comments"></i>
+          <Link to="/chatbot" className="feature-tile-link">
+            <div className="feature-tile">
+              <div className="feature-icon">
+                <i className="fas fa-comments"></i>
+              </div>
+              <h3>AI Chatbot Support</h3>
+              <p>Get instant mental health support and guidance from our AI-powered chatbot, available 24/7.</p>
             </div>
-            <h3>AI Chatbot Support</h3>
-            <p>Get instant mental health support and guidance from our AI-powered chatbot, available 24/7.</p>
-          </div>
+          </Link>
+          
+          <Link to="/forum" className="feature-tile-link">
+            <div className="feature-tile">
+              <div className="feature-icon">
+                <i className="fas fa-users"></i>
+              </div>
+              <h3>Peer Forum</h3>
+              <p>Connect with others in a safe space to share experiences and support each other's mental wellness journey.</p>
+            </div>
+          </Link>
+          
+          <Link to="/resources" className="feature-tile-link">
+            <div className="feature-tile">
+              <div className="feature-icon">
+                <i className="fas fa-book"></i>
+              </div>
+              <h3>Resource Hub</h3>
+              <p>Access mental health articles, educational videos, and evidence-based content curated by professionals.</p>
+            </div>
+          </Link>
+          
+          <Link to="/screening" className="feature-tile-link">
+            <div className="feature-tile">
+              <div className="feature-icon">
+                <i className="fas fa-clipboard-list"></i>
+              </div>
+              <h3>Mental Health Screening</h3>
+              <p>Take PHQ-9 and GAD-7 self-assessment questionnaires to better understand your mental wellness.</p>
+            </div>
+          </Link>
+          
+          <Link to="/book" className="feature-tile-link">
+            <div className="feature-tile">
+              <div className="feature-icon">
+                <i className="fas fa-calendar-check"></i>
+              </div>
+              <h3>Book Sessions</h3>
+              <p>Schedule professional therapy sessions with qualified mental health practitioners at your convenience.</p>
+            </div>
+          </Link>
           
           <div className="feature-tile">
             <div className="feature-icon">
-              <i className="fas fa-users"></i>
+              <i className="fas fa-pen-fancy"></i>
             </div>
-            <h3>Peer Forum</h3>
-            <p>Connect with others in a safe space to share experiences and support each other's mental wellness journey.</p>
-          </div>
-          
-          <div className="feature-tile">
-            <div className="feature-icon">
-              <i className="fas fa-book"></i>
-            </div>
-            <h3>Resource Hub</h3>
-            <p>Access mental health articles, self-assessment tools like PHQ-9 and GAD-7, and educational content.</p>
-          </div>
-          
-          <div className="feature-tile">
-            <div className="feature-icon">
-              <i className="fas fa-calendar-check"></i>
-            </div>
-            <h3>Book Sessions</h3>
-            <p>Schedule professional therapy sessions with qualified mental health practitioners at your convenience.</p>
-          </div>
-          
-          <div className="feature-tile">
-            <div className="feature-icon">
-              <i className="fas fa-chart-line"></i>
-            </div>
-            <h3>Progress Tracking</h3>
-            <p>Monitor your mental wellness journey with personalized insights and progress tracking tools.</p>
+            <h3>Journaling</h3>
+            <p>Write personal journal entries and gain insights from your thoughts and emotions over time.</p>
           </div>
         </div>
       </div>

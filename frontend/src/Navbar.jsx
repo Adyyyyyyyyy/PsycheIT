@@ -64,10 +64,11 @@ const NavBar = () => {
         
         <nav className={isMenuOpen ? "nav-open" : ""}>
           <ul>
-            <li><Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>SHANTI</Link></li>
+            <li><Link to="/chatbot" onClick={() => setIsMenuOpen(false)}>SHANTI</Link></li>
             <li><Link to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
             <li><Link to="/forum" onClick={() => setIsMenuOpen(false)}>Forum</Link></li>
             <li><Link to="/book" onClick={() => setIsMenuOpen(false)}>Book Counselor</Link></li>
+            <li><Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</Link></li>
           </ul>
         </nav>
         
