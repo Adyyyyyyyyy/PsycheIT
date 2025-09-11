@@ -8,6 +8,8 @@ import BlogPage from "./resourceHub/AllBlogs";
 import PeerForum from "./PeerForum/PeerForum";
 import Auth from "./auth";
 import ProtectedRoute from "./components/ProtectedRoute";
+import BookingPage from './bookSession/booking'
+
 
 function App() {
   return (
@@ -56,6 +58,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <PeerForum />
+              </ProtectedRoute>
+            }
+          />
+
+        <Route
+            path="/book"
+            element={
+              <ProtectedRoute>
+                <BookingPage />
               </ProtectedRoute>
             }
           />
